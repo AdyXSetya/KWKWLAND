@@ -162,6 +162,21 @@ def send_follow(session_id, shop_id, cookies):
     except Exception as e:
         return f"Error: {e}"
 
+# Fungsi untuk mengirim buy
+def send_buy(session_id, cookies):
+    url = f"https://live.shopee.co.id/api/v1/session/{session_id}/msg/buy"
+    headers = {
+        "cookie": "; ".join(cookies),
+        "user-agent": "ShopeeApp/3.0 (Windows; Desktop; AppVer=3.0)",
+        "content-type": "application/json",
+        "accept": "*/*"
+    }
+    try:
+        response = requests.post(url, headers=headers, json={})
+        return response.json()
+    except Exception as e:
+        return f"Error: {e}"
+
 # Fungsi untuk memproses setiap session
 def process_session(session_data, session_idx):
     cookies_list = load_cookies_from_github(session_data["url_raw_github"])
@@ -186,6 +201,10 @@ def process_session(session_data, session_idx):
                 log = send_follow(session_data["session"], session_data["shopid"], [cookie])
                 session_logs[session_idx].append(log)
 
+            if session_data["send_buy"]:
+                log = send_buy(session_data["session"], [cookie])
+                session_logs[session_idx].append(log)
+
             time.sleep(session_data["delay_between_actions"])
 
     st.session_state.sessions[session_idx]["status"] = "Stopped"
@@ -208,6 +227,7 @@ for idx, session_data in enumerate(st.session_state.sessions):
         session_data["send_like"] = st.checkbox(f"Kirim Like ({idx + 1})", value=session_data["send_like"], key=f"send-like-{idx}")
         session_data["send_message"] = st.checkbox(f"Kirim Pesan ({idx + 1})", value=session_data["send_message"], key=f"send-message-{idx}")
         session_data["send_follow"] = st.checkbox(f"Kirim Follow ({idx + 1})", value=session_data["send_follow"], key=f"send-follow-{idx}")
+        session_data["send_buy"] = st.checkbox(f"Kirim Buy ({idx + 1})", value=session_data["send_buy"], key=f"send-buy-{idx}")
 
         # Tombol Start/Stop dan Hapus
         col1, col2, col3 = st.columns(3)
