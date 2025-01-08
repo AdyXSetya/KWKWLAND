@@ -147,36 +147,6 @@ def send_message(session_id, cookies, uuid, userig, content):
     except Exception as e:
         return f"Error: {e}"
 
-# Fungsi untuk mengirim follow
-def send_follow(session_id, shop_id, cookies):
-    url = f"https://live.shopee.co.id/api/v1/session/{session_id}/follow/{shop_id}"
-    headers = {
-        "cookie": "; ".join(cookies),
-        "user-agent": "ShopeeApp/3.0 (iOS; Mobile; AppVer=3.0)",
-        "accept": "*/*",
-        "content-type": "application/json"
-    }
-    try:
-        response = requests.post(url, headers=headers, json={})
-        return response.json()
-    except Exception as e:
-        return f"Error: {e}"
-
-# Fungsi untuk mengirim buy
-def send_buy(session_id, cookies):
-    url = f"https://live.shopee.co.id/api/v1/session/{session_id}/msg/buy"
-    headers = {
-        "cookie": "; ".join(cookies),
-        "user-agent": "ShopeeApp/3.0 (Windows; Desktop; AppVer=3.0)",
-        "content-type": "application/json",
-        "accept": "*/*"
-    }
-    try:
-        response = requests.post(url, headers=headers, json={})
-        return response.json()
-    except Exception as e:
-        return f"Error: {e}"
-
 # Fungsi untuk memproses setiap session
 def process_session(session_data, session_idx):
     cookies_list = load_cookies_from_github(session_data["url_raw_github"])
@@ -195,14 +165,6 @@ def process_session(session_data, session_idx):
 
             if session_data["send_message"]:
                 log = send_message(session_data["session"], [cookie], session_data["uuid"], session_data["userig"], session_data["pesan"])
-                session_logs[session_idx].append(log)
-
-            if session_data["send_follow"]:
-                log = send_follow(session_data["session"], session_data["shopid"], [cookie])
-                session_logs[session_idx].append(log)
-
-            if session_data["send_buy"]:
-                log = send_buy(session_data["session"], [cookie])
                 session_logs[session_idx].append(log)
 
             time.sleep(session_data["delay_between_actions"])
@@ -226,11 +188,9 @@ for idx, session_data in enumerate(st.session_state.sessions):
         # Checkbox untuk bot
         session_data["send_like"] = st.checkbox(f"Kirim Like ({idx + 1})", value=session_data["send_like"], key=f"send-like-{idx}")
         session_data["send_message"] = st.checkbox(f"Kirim Pesan ({idx + 1})", value=session_data["send_message"], key=f"send-message-{idx}")
-        session_data["send_follow"] = st.checkbox(f"Kirim Follow ({idx + 1})", value=session_data["send_follow"], key=f"send-follow-{idx}")
-        session_data["send_buy"] = st.checkbox(f"Kirim Buy ({idx + 1})", value=session_data["send_buy"], key=f"send-buy-{idx}")
 
-        # Tombol Start/Stop dan Hapus
-        col1, col2, col3 = st.columns(3)
+        # Tombol Start/Stop
+        col1, col2 = st.columns(2)
         with col1:
             if st.button("Start", key=f"start-{idx}"):
                 if not running_sessions.get(idx, False):
@@ -239,10 +199,6 @@ for idx, session_data in enumerate(st.session_state.sessions):
         with col2:
             if st.button("Stop", key=f"stop-{idx}"):
                 running_sessions[idx] = False
-        with col3:
-            if st.button("Hapus", key=f"delete-{idx}"):
-                del st.session_state.sessions[idx]
-                st.experimental_rerun()
 
         # Menampilkan status
         status = session_data["status"]
