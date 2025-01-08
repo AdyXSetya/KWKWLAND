@@ -1,2 +1,139 @@
-import base64
-exec(base64.b64decode('aW1wb3J0IHRocmVhZGluZwppbXBvcnQgc3RyZWFtbGl0IGFzIHN0CmltcG9ydCByZXF1ZXN0cwppbXBvcnQgdGltZQoKcnVubmluZyA9IEZhbHNlCiMgSnVkdWwgQXBsaWthc2kgZGVuZ2FuIENTUyB5YW5nIGxlYmloIG1lbmFyaWsKc3QubWFya2Rvd24oIiIiCiAgICA8c3R5bGU+CiAgICAgICAgaDEgewogICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7CiAgICAgICAgICAgIGNvbG9yOiAjMzMzOwogICAgICAgICAgICBmb250LXNpemU6IDQwcHg7CiAgICAgICAgfQogICAgICAgIC5zdEJ1dHRvbiA+IGJ1dHRvbiB7CiAgICAgICAgICAgIHdpZHRoOiAxMDAlOwogICAgICAgICAgICBwYWRkaW5nOiAxMnB4OwogICAgICAgICAgICBmb250LXNpemU6IDIwcHg7CiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM0Q0FGNTA7CiAgICAgICAgICAgIGJvcmRlcjogbm9uZTsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTBweDsKICAgICAgICAgICAgY29sb3I6IHdoaXRlOwogICAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkOwogICAgICAgIH0KICAgICAgICAuc3RCdXR0b24gPiBidXR0b246aG92ZXIgewogICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDVhMDQ5OwogICAgICAgIH0KICAgICAgICAuc2xpZGVyLWxhYmVsIHsKICAgICAgICAgICAgZm9udC1zaXplOiAxNnB4OwogICAgICAgICAgICBmb250LXdlaWdodDogYm9sZDsKICAgICAgICAgICAgY29sb3I6ICMzMzM7CiAgICAgICAgfQogICAgPC9zdHlsZT4KIiIiLCB1bnNhZmVfYWxsb3dfaHRtbD1UcnVlKQoKc3QubWFya2Rvd24oIjxoMT5TZXBhbXBhbSAvIERpZGluIFdhaHl1ZGluPC9oMT4iLCB1bnNhZmVfYWxsb3dfaHRtbD1UcnVlKQoKIyBNZW5nYXR1ciBsYXlvdXQgZGVuZ2FuIGR1YSBrb2xvbQpjb2wxLCBjb2wyID0gc3QuY29sdW1ucygyKQoKIyBJbnB1dCBkYWxhbSBkdWEga29sb20gZGVuZ2FuIFBlc2FuIGRpIEJhd2FoIFVzZXIgSUcgZGFuIHNlbGViYXIgZHVhIGtvbG9tCndpdGggY29sMToKICAgIHNlc3Npb24gPSBzdC50ZXh0X2lucHV0KCJNYXN1a2thbiBTZXNzaW9uOiIpCiAgICB1dWlkID0gc3QudGV4dF9pbnB1dCgiTWFzdWtrYW4gVVVJRDoiKQogICAgdXNlcmlnID0gc3QudGV4dF9pbnB1dCgiTWFzdWtrYW4gVXNlciBJRzoiKQoKd2l0aCBjb2wyOgogICAgc2hvcGlkID0gc3QudGV4dF9pbnB1dCgiTWFzdWtrYW4gU2hvcCBJRDoiKQogICAgdXJsX3Jhd19naXRodWIgPSBzdC50ZXh0X2lucHV0KCJNYXN1a2thbiBVUkwgUmF3IEdpdEh1YiB1bnR1ayBDb29raWVzOiIpCgojIEdhcmlzIHBlbWJhdGFzIHVudHVrIGVzdGV0aWthCnN0Lm1hcmtkb3duKCI8aHIgc3R5bGU9J2JvcmRlcjoxcHggc29saWQgI2VlZTsnPiIsIHVuc2FmZV9hbGxvd19odG1sPVRydWUpCgojIOKchSBNZW1idWF0IFBlc2FuIFNlamFqYXIgRHVhIEtvbG9tIChGdWxsIFdpZHRoKQpzdC5tYXJrZG93bignPHAgY2xhc3M9InNsaWRlci1sYWJlbCI+TWFzdWtrYW4gUGVzYW46PC9wPicsIHVuc2FmZV9hbGxvd19odG1sPVRydWUpCnBlc2FuID0gc3QudGV4dF9hcmVhKCIiLCBoZWlnaHQ9MTAwKSAgIyBNZW5nZ3VuYWthbiBzYXR1IGtvbG9tIHBlbnVoIGRpIGx1YXIgY29sMSBkYW4gY29sMgoKCiMgU2xpZGVyIHVudHVrIExpa2UgZGFuIERlbGF5IGRlbmdhbiBMYWJlbCB5YW5nIERpcGVyamVsYXMKc3QubWFya2Rvd24oJzxwIGNsYXNzPSJzbGlkZXItbGFiZWwiPk1hc3Vra2FuIEp1bWxhaCBMaWtlOjwvcD4nLCB1bnNhZmVfYWxsb3dfaHRtbD1UcnVlKQpsaWtlX2NudCA9IHN0LnNsaWRlcigiIiwgbWluX3ZhbHVlPTEsIG1heF92YWx1ZT01MCwgdmFsdWU9MSkKCnN0Lm1hcmtkb3duKCc8cCBjbGFzcz0ic2xpZGVyLWxhYmVsIj5EZWxheSBhbnRhciBBa3NpIChkZXRpayk6PC9wPicsIHVuc2FmZV9hbGxvd19odG1sPVRydWUpCmRlbGF5X2JldHdlZW5fYWN0aW9ucyA9IHN0LnNsaWRlcigiIiwgbWluX3ZhbHVlPTAuMSwgbWF4X3ZhbHVlPTUuMCwgdmFsdWU9MS4wKQoKIyBGdW5nc2kgdW50dWsgbWVtdWF0IGNvb2tpZXMgZGFyaSBVUkwgR2l0SHViCmRlZiBsb2FkX2Nvb2tpZXNfZnJvbV9naXRodWIodXJsKToKICAgIHRyeToKICAgICAgICByZXNwb25zZSA9IHJlcXVlc3RzLmdldCh1cmwpCiAgICAgICAgcmVzcG9uc2UucmFpc2VfZm9yX3N0YXR1cygpCiAgICAgICAgY29va2llc19saXN0ID0gcmVzcG9uc2UudGV4dC5zcGxpdGxpbmVzKCkKICAgICAgICByZXR1cm4gW2Nvb2tpZS5zdHJpcCgpIGZvciBjb29raWUgaW4gY29va2llc19saXN0XQogICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgIHN0LmVycm9yKGYiR2FnYWwgbWVuZ3VuZHVoIGZpbGUgY29va2llczoge2V9IikKICAgICAgICByZXR1cm4gW10KCiMgRnVuZ3NpIHVudHVrIG1lbmdpcmltIGxpa2UgZGVuZ2FuIGhlYWRlciBzcGVzaWZpawpkZWYgc2VuZF9saWtlKHNlc3Npb25faWQsIGNvb2tpZXMsIGxpa2VfY291bnQpOgogICAgdXJsID0gZiJodHRwczovL2xpdmUuc2hvcGVlLmNvLmlkL2FwaS92MS9zZXNzaW9uL3tzZXNzaW9uX2lkfS9saWtlIgogICAgaGVhZGVycyA9IHsKICAgICAgICAiY29va2llIjogIjsgIi5qb2luKGNvb2tpZXMpLAogICAgICAgICJjb250ZW50LXR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIsCiAgICAgICAgInVzZXItYWdlbnQiOiAiU2hvcGVlQXBwLzMuMCAoQW5kcm9pZDsgTW9iaWxlOyBBcHBWZXI9My4wKSIsCiAgICAgICAgImFjY2VwdCI6ICIqLyoiCiAgICB9CiAgICBkYXRhID0geyJsaWtlX2NudCI6IGxpa2VfY291bnR9CiAgICB0cnk6CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KHVybCwgaGVhZGVycz1oZWFkZXJzLCBqc29uPWRhdGEpCiAgICAgICAgcmV0dXJuIHJlc3BvbnNlLmpzb24oKQogICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgIHJldHVybiBmIkVycm9yOiB7ZX0iCgoKIyBGdW5nc2kgdW50dWsgbWVuZ2lyaW0gcGVzYW4gZGVuZ2FuIHJlc3BvbnNlIHlhbmcgbGViaWggc2ltcGVsCmRlZiBzZW5kX21lc3NhZ2Uoc2Vzc2lvbl9pZCwgY29va2llcywgdXVpZCwgdXNlcmlnLCBjb250ZW50KToKICAgIHVybCA9IGYiaHR0cHM6Ly9saXZlLnNob3BlZS5jby5pZC9hcGkvdjEvc2Vzc2lvbi97c2Vzc2lvbl9pZH0vbWVzc2FnZSIKICAgIGhlYWRlcnMgPSB7CiAgICAgICAgJ2FjY2VwdCc6ICdhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyonLAogICAgICAgICdhY2NlcHQtbGFuZ3VhZ2UnOiAnZW4tVVMsZW47cT0wLjknLAogICAgICAgICdhZi1hYy1lbmMtZGF0JzogJzAwMWVkOTRkYTE2ZDBkYTUnLAogICAgICAgICdjbGllbnQtaW5mbyc6ICdwbGF0Zm9ybT05O2RldmljZV9pZD05V0tZTGJuQ2tjb2pldXphT0d3N2JLejFCU2Nva2pncycsCiAgICAgICAgJ2NvbnRlbnQtdHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJywKICAgICAgICAnb3JpZ2luJzogJ2h0dHBzOi8vbGl2ZS5zaG9wZWUuY28uaWQnLAogICAgICAgICdwcmlvcml0eSc6ICd1PTEsIGknLAogICAgICAgICdyZWZlcmVyJzogZidodHRwczovL2xpdmUuc2hvcGVlLmNvLmlkL3BjL2xpdmU/c2Vzc2lvbj17c2Vzc2lvbl9pZH0nLAogICAgICAgICdzZWMtY2gtdWEnOiAnIkdvb2dsZSBDaHJvbWUiO3Y9IjEzMSIsICJDaHJvbWl1bSI7dj0iMTMxIiwgIk5vdF9BIEJyYW5kIjt2PSIyNCInLAogICAgICAgICdzZWMtY2gtdWEtbW9iaWxlJzogJz8wJywKICAgICAgICAnc2VjLWNoLXVhLXBsYXRmb3JtJzogJyJXaW5kb3dzIicsCiAgICAgICAgJ3NlYy1mZXRjaC1kZXN0JzogJ2VtcHR5JywKICAgICAgICAnc2VjLWZldGNoLW1vZGUnOiAnY29ycycsCiAgICAgICAgJ3NlYy1mZXRjaC1zaXRlJzogJ3NhbWUtb3JpZ2luJywKICAgICAgICAndXNlci1hZ2VudCc6ICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBzZXBlcnRpIEdlY2tvKSBDaHJvbWUvMTMxLjAuMC4wIFNhZmFyaS81MzcuMzYnLAogICAgICAgICd4LXN6LXNkay12ZXJzaW9uJzogJzEuMTAuNycsCiAgICAgICAgImNvb2tpZSI6ICI7ICIuam9pbihjb29raWVzKSAgIyBDb29raWVzIHRldGFwIGRpbWFzdWtrYW4gZGkgaGVhZGVyCiAgICB9CgogICAgIyBEYXRhIEpTT04geWFuZyBkaWtpcmlta2FuCiAgICBqc29uX2RhdGEgPSB7CiAgICAgICAgJ3V1aWQnOiB1dWlkLAogICAgICAgICd1c2Vyc2lnJzogdXNlcmlnLCAgIyBNZW5nZ3VuYWthbiB1c2VyaWcgc2ViYWdhaSB1c2VyIHNpZ25hdHVyZQogICAgICAgICdjb250ZW50JzogZid7eyJ0eXBlIjoxMDAsImNvbnRlbnQiOiJ7Y29udGVudH0ifX0nLAogICAgICAgICdwaW4nOiBGYWxzZQogICAgfQoKICAgIHRyeToKICAgICAgICAjIE1lbmdpcmltIHBlcm1pbnRhYW4gUE9TVCBrZSBzZXJ2ZXIgU2hvcGVlCiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KHVybCwgaGVhZGVycz1oZWFkZXJzLCBqc29uPWpzb25fZGF0YSkKCiAgICAgICAgIyBKaWthIHN0YXR1cyBjb2RlIDIwMCwgcGVzYW4gc3Vrc2VzCiAgICAgICAgaWYgcmVzcG9uc2Uuc3RhdHVzX2NvZGUgPT0gMjAwOgogICAgICAgICAgICByZXR1cm4gIuKchSBQZXNhbiBiZXJoYXNpbCBkaWtpcmltISIKICAgICAgICBlbHNlOgogICAgICAgICAgICAjIE1lbmFtcGlsa2FuIHN0YXR1cyBrb2RlIHNlbGFpbiAyMDAKICAgICAgICAgICAgcmV0dXJuIGYi4p2MIEdhZ2FsIG1lbmdpcmltIHBlc2FuLiBLb2RlIFN0YXR1czoge3Jlc3BvbnNlLnN0YXR1c19jb2RlfSIKICAgIGV4Y2VwdCByZXF1ZXN0cy5leGNlcHRpb25zLlJlcXVlc3RFeGNlcHRpb24gYXMgZToKICAgICAgICByZXR1cm4gZiLinYwgUmVxdWVzdCBFcnJvcjoge2V9IgogICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgIHJldHVybiBmIuKdjCBUZXJqYWRpIGtlc2FsYWhhbjoge2V9IgoKCiMgRnVuZ3NpIHVudHVrIG1lbmdpcmltIGZvbGxvdyBkZW5nYW4gaGVhZGVyIHNwZXNpZmlrCmRlZiBzZW5kX2ZvbGxvdyhzZXNzaW9uX2lkLCBzaG9wX2lkLCBjb29raWVzKToKICAgIHVybCA9IGYiaHR0cHM6Ly9saXZlLnNob3BlZS5jby5pZC9hcGkvdjEvc2Vzc2lvbi97c2Vzc2lvbl9pZH0vZm9sbG93L3tzaG9wX2lkfSIKICAgIGhlYWRlcnMgPSB7CiAgICAgICAgImNvb2tpZSI6ICI7ICIuam9pbihjb29raWVzKSwKICAgICAgICAidXNlci1hZ2VudCI6ICJTaG9wZWVBcHAvMy4wIChpT1M7IE1vYmlsZTsgQXBwVmVyPTMuMCkiLAogICAgICAgICJhY2NlcHQiOiAiKi8qIiwKICAgICAgICAiY29udGVudC10eXBlIjogImFwcGxpY2F0aW9uL2pzb24iCiAgICB9CiAgICB0cnk6CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KHVybCwgaGVhZGVycz1oZWFkZXJzLCBqc29uPXt9KQogICAgICAgIHJldHVybiByZXNwb25zZS5qc29uKCkKICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICByZXR1cm4gZiJFcnJvcjoge2V9IgoKIyBGdW5nc2kgdW50dWsgbWVuZ2lyaW0gYnV5IGRlbmdhbiBoZWFkZXIgc3Blc2lmaWsKZGVmIHNlbmRfYnV5KHNlc3Npb25faWQsIGNvb2tpZXMpOgogICAgdXJsID0gZiJodHRwczovL2xpdmUuc2hvcGVlLmNvLmlkL2FwaS92MS9zZXNzaW9uL3tzZXNzaW9uX2lkfS9tc2cvYnV5IgogICAgaGVhZGVycyA9IHsKICAgICAgICAiY29va2llIjogIjsgIi5qb2luKGNvb2tpZXMpLAogICAgICAgICJ1c2VyLWFnZW50IjogIlNob3BlZUFwcC8zLjAgKFdpbmRvd3M7IERlc2t0b3A7IEFwcFZlcj0zLjApIiwKICAgICAgICAiY29udGVudC10eXBlIjogImFwcGxpY2F0aW9uL2pzb24iLAogICAgICAgICJhY2NlcHQiOiAiKi8qIgogICAgfQogICAgdHJ5OgogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdCh1cmwsIGhlYWRlcnM9aGVhZGVycywganNvbj17fSkKICAgICAgICByZXR1cm4gcmVzcG9uc2UuanNvbigpCiAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgcmV0dXJuIGYiRXJyb3I6IHtlfSIKCgojIEZ1bmdzaSB1bnR1ayBtZW5qYWxhbmthbiBsb29waW5nIHNlbGFtYW55YSBkaSBiYWNrZ3JvdW5kCmRlZiBzdGFydF9sb29wKCk6CiAgICBnbG9iYWwgcnVubmluZwogICAgcnVubmluZyA9IFRydWUKICAgIGNvb2tpZXNfbGlzdCA9IGxvYWRfY29va2llc19mcm9tX2dpdGh1Yih1cmxfcmF3X2dpdGh1YikKCiAgICBpZiBjb29raWVzX2xpc3Q6CiAgICAgICAgd2hpbGUgcnVubmluZzoKICAgICAgICAgICAgZm9yIGluZGV4LCBjb29raWUgaW4gZW51bWVyYXRlKGNvb2tpZXNfbGlzdCk6CiAgICAgICAgICAgICAgICBjb29raWVfbGlzdCA9IFtjb29raWVdCgogICAgICAgICAgICAgICAgIyBNZW5naXJpbSBMaWtlIGRlbmdhbiBsb2cgZGluYW1pcwogICAgICAgICAgICAgICAgcHJpbnQoZiJNZW5naXJpbSBMaWtlLi4uICh7aW5kZXggKyAxfS97bGVuKGNvb2tpZXNfbGlzdCl9KSIpCiAgICAgICAgICAgICAgICBzZW5kX2xpa2Uoc2Vzc2lvbiwgY29va2llX2xpc3QsIGxpa2VfY250KQoKICAgICAgICAgICAgICAgICMgTWVuZ2lyaW0gUGVzYW4gZGVuZ2FuIGxvZyBkaW5hbWlzCiAgICAgICAgICAgICAgICBwcmludChmIk1lbmdpcmltIFBlc2FuLi4uICh7aW5kZXggKyAxfS97bGVuKGNvb2tpZXNfbGlzdCl9KSIpCiAgICAgICAgICAgICAgICBzZW5kX21lc3NhZ2Uoc2Vzc2lvbiwgY29va2llX2xpc3QsIHV1aWQsIHVzZXJpZywgcGVzYW4pCgogICAgICAgICAgICAgICAgIyBNZW5naXJpbSBGb2xsb3cgZGVuZ2FuIGxvZyBkaW5hbWlzCiAgICAgICAgICAgICAgICBwcmludChmIk1lbmdpcmltIEZvbGxvdy4uLiAoe2luZGV4ICsgMX0ve2xlbihjb29raWVzX2xpc3QpfSkiKQogICAgICAgICAgICAgICAgc2VuZF9mb2xsb3coc2Vzc2lvbiwgc2hvcGlkLCBjb29raWVfbGlzdCkKCiAgICAgICAgICAgICAgICAjIE1lbmdpcmltIEJ1eSBkZW5nYW4gbG9nIGRpbmFtaXMKICAgICAgICAgICAgICAgIHByaW50KGYiTWVuZ2lyaW0gQnV5Li4uICh7aW5kZXggKyAxfS97bGVuKGNvb2tpZXNfbGlzdCl9KSIpCiAgICAgICAgICAgICAgICBzZW5kX2J1eShzZXNzaW9uLCBjb29raWVfbGlzdCkKCiAgICAgICAgICAgICAgICAjIEplZGEgYW50YXIgYWtzaQogICAgICAgICAgICAgICAgdGltZS5zbGVlcChkZWxheV9iZXR3ZWVuX2FjdGlvbnMpCiAgICBlbHNlOgogICAgICAgIHByaW50KCLinYwgR2FnYWwgbWVtdWF0IGNvb2tpZXMsIHBhc3Rpa2FuIFVSTCBSYXcgR2l0SHViIGJlbmFyLiIpCgpjb2wxLCBjb2wyID0gc3QuY29sdW1ucygyKQoKd2l0aCBjb2wxOgogICAgaWYgc3QuYnV0dG9uKCLilrbvuI9TdGFydCIpOgogICAgICAgIGlmIG5vdCBydW5uaW5nOgogICAgICAgICAgICB0aHJlYWRpbmcuVGhyZWFkKHRhcmdldD1zdGFydF9sb29wLCBkYWVtb249VHJ1ZSkuc3RhcnQoKQogICAgICAgICAgICBzdC5zdWNjZXNzKCJMb29waW5nIGRpIGJhY2tncm91bmQgZGltdWxhaSEgQXBsaWthc2kgYWthbiB0ZXRhcCBiZXJqYWxhbi4iKQoK'))
+import threading
+import streamlit as st
+import requests
+import time
+
+running = False
+# Judul Aplikasi dengan CSS yang lebih menarik
+st.markdown("""
+    <style>
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 40px;
+        }
+        .stButton > button {
+            width: 100%;
+            padding: 12px;
+            font-size: 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .stButton > button:hover {
+            background-color: #45a049;
+        }
+        .slider-label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+st.markdown("<h1>Sepampam / Didin Wahyudin</h1>", unsafe_allow_html=True)
+
+# Mengatur layout dengan dua kolom
+col1, col2 = st.columns(2)
+
+with col1:
+    session = st.text_input("Masukkan Session:")
+    shopid = st.text_input("Masukkan Shop ID:")
+with col2:
+    url_raw_github = st.text_input("Masukkan URL Raw GitHub untuk Cookies:")
+
+# Garis pembatas untuk estetika
+st.markdown("<hr style='border:1px solid #eee;'>", unsafe_allow_html=True)
+
+# Slider untuk Like dan Delay dengan Label yang Diperjelas
+st.markdown('<p class="slider-label">Masukkan Jumlah Like:</p>', unsafe_allow_html=True)
+like_cnt = st.slider("", min_value=1, max_value=50, value=1)
+
+st.markdown('<p class="slider-label">Delay antar Aksi (detik):</p>', unsafe_allow_html=True)
+delay_between_actions = st.slider("", min_value=0.1, max_value=5.0, value=1.0)
+
+# Fungsi untuk memuat cookies dari URL GitHub
+def load_cookies_from_github(url):
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        cookies_list = response.text.splitlines()
+        return [cookie.strip() for cookie in cookies_list]
+    except Exception as e:
+        st.error(f"Gagal mengunduh file cookies: {e}")
+        return []
+
+# Fungsi untuk mengirim like dengan header spesifik
+def send_like(session_id, cookies, like_count):
+    url = f"https://live.shopee.co.id/api/v1/session/{session_id}/like"
+    headers = {
+        "cookie": "; ".join(cookies),
+        "content-type": "application/json",
+        "user-agent": "ShopeeApp/3.0 (Android; Mobile; AppVer=3.0)",
+        "accept": "*/*"
+    }
+    data = {"like_cnt": like_count}
+    try:
+        response = requests.post(url, headers=headers, json=data)
+        return response.json()
+    except Exception as e:
+        return {"error": str(e)}
+
+# Fungsi untuk mengirim follow dengan header spesifik
+def send_follow(session_id, shop_id, cookies):
+    url = f"https://live.shopee.co.id/api/v1/session/{session_id}/follow/{shop_id}"
+    headers = {
+        "cookie": "; ".join(cookies),
+        "user-agent": "ShopeeApp/3.0 (iOS; Mobile; AppVer=3.0)",
+        "accept": "*/*",
+        "content-type": "application/json"
+    }
+    try:
+        response = requests.post(url, headers=headers, json={})
+        return response.json()
+    except Exception as e:
+        return {"error": str(e)}
+
+# Fungsi untuk mengirim buy dengan header spesifik
+def send_buy(session_id, cookies):
+    url = f"https://live.shopee.co.id/api/v1/session/{session_id}/msg/buy"
+    headers = {
+        "cookie": "; ".join(cookies),
+        "user-agent": "ShopeeApp/3.0 (Windows; Desktop; AppVer=3.0)",
+        "content-type": "application/json",
+        "accept": "*/*"
+    }
+    try:
+        response = requests.post(url, headers=headers, json={})
+        return response.json()
+    except Exception as e:
+        return {"error": str(e)}
+
+# Fungsi untuk menjalankan looping selamanya di background
+def start_loop():
+    global running
+    running = True
+    cookies_list = load_cookies_from_github(url_raw_github)
+
+    if cookies_list:
+        while running:
+            for index, cookie in enumerate(cookies_list):
+                cookie_list = [cookie]
+
+                send_like(session, cookie_list, like_cnt)
+                send_follow(session, shopid, cookie_list)
+                send_buy(session, cookie_list)
+                time.sleep(delay_between_actions)
+    else:
+        st.error("Gagal memuat cookies, pastikan URL Raw GitHub benar.")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("▶️ Start"):
+        if not running:
+            threading.Thread(target=start_loop, daemon=True).start()
+            st.success("Looping di background dimulai! Aplikasi akan tetap berjalan.")
