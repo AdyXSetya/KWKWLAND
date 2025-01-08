@@ -76,13 +76,13 @@ if st.button("Tambah Session"):
         "uuid": "",
         "url_raw_github": "",
         "pesan": "",
-        "like_cnt": 10,  # Default nilai slider
-        "delay_between_actions": 1.0,  # Default nilai slider
+        "like_cnt": 10,
+        "delay_between_actions": 1.0,
         "send_like": False,
         "send_message": False,
         "send_follow": False,
         "send_buy": False,
-        "status": "Stopped",  # Status awal
+        "status": "Stopped",
     })
 
 # Fungsi untuk memuat cookies
@@ -94,7 +94,7 @@ def load_cookies_from_github(url):
     except Exception as e:
         return []
 
-# Fungsi untuk mengirim like dengan header spesifik
+# Fungsi untuk mengirim like
 def send_like(session_id, cookies, like_count):
     url = f"https://live.shopee.co.id/api/v1/session/{session_id}/like"
     headers = {
@@ -110,8 +110,7 @@ def send_like(session_id, cookies, like_count):
     except Exception as e:
         return f"Error: {e}"
 
-
-# Fungsi untuk mengirim pesan dengan response yang lebih simpel
+# Fungsi untuk mengirim pesan
 def send_message(session_id, cookies, uuid, userig, content):
     url = f"https://live.shopee.co.id/api/v1/session/{session_id}/message"
     headers = {
@@ -131,34 +130,24 @@ def send_message(session_id, cookies, uuid, userig, content):
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, seperti Gecko) Chrome/131.0.0.0 Safari/537.36',
         'x-sz-sdk-version': '1.10.7',
-        "cookie": "; ".join(cookies)  # Cookies tetap dimasukkan di header
+        "cookie": "; ".join(cookies)
     }
-
-    # Data JSON yang dikirimkan
-    json_data = {
+    data = {
         'uuid': uuid,
-        'usersig': userig,  # Menggunakan userig sebagai user signature
+        'usersig': userig,
         'content': f'{{"type":100,"content":"{content}"}}',
         'pin': False
     }
-
     try:
-        # Mengirim permintaan POST ke server Shopee
-        response = requests.post(url, headers=headers, json=json_data)
-
-        # Jika status code 200, pesan sukses
+        response = requests.post(url, headers=headers, json=data)
         if response.status_code == 200:
             return "Pesan berhasil dikirim!"
         else:
-            # Menampilkan status kode selain 200
             return f"Gagal mengirim pesan. Kode Status: {response.status_code}"
-    except requests.exceptions.RequestException as e:
-        return f"Request Error: {e}"
     except Exception as e:
         return f"Error: {e}"
 
-
-# Fungsi untuk mengirim follow dengan header spesifik
+# Fungsi untuk mengirim follow
 def send_follow(session_id, shop_id, cookies):
     url = f"https://live.shopee.co.id/api/v1/session/{session_id}/follow/{shop_id}"
     headers = {
@@ -166,21 +155,6 @@ def send_follow(session_id, shop_id, cookies):
         "user-agent": "ShopeeApp/3.0 (iOS; Mobile; AppVer=3.0)",
         "accept": "*/*",
         "content-type": "application/json"
-    }
-    try:
-        response = requests.post(url, headers=headers, json={})
-        return response.json()
-    except Exception as e:
-        return f"Terjadi kesalahan: {e}"
-
-# Fungsi untuk mengirim buy dengan header spesifik
-def send_buy(session_id, cookies):
-    url = f"https://live.shopee.co.id/api/v1/session/{session_id}/msg/buy"
-    headers = {
-        "cookie": "; ".join(cookies),
-        "user-agent": "ShopeeApp/3.0 (Windows; Desktop; AppVer=3.0)",
-        "content-type": "application/json",
-        "accept": "*/*"
     }
     try:
         response = requests.post(url, headers=headers, json={})
@@ -212,10 +186,6 @@ def process_session(session_data, session_idx):
                 log = send_follow(session_data["session"], session_data["shopid"], [cookie])
                 session_logs[session_idx].append(log)
 
-            if session_data["send_buy"]:
-                log = send_buy(session_data["session"], [cookie])
-                session_logs[session_idx].append(log)
-
             time.sleep(session_data["delay_between_actions"])
 
     st.session_state.sessions[session_idx]["status"] = "Stopped"
@@ -235,10 +205,9 @@ for idx, session_data in enumerate(st.session_state.sessions):
         session_data["delay_between_actions"] = st.slider(f"Delay antar aksi (detik) ({idx + 1}):", min_value=0.1, max_value=5.0, value=session_data["delay_between_actions"], key=f"delay-{idx}")
 
         # Checkbox untuk bot
-        session_data["send_like"] = st.checkbox(f"Kirim Like ({idx + 1})", value=session_data["send_like"], key=f"like-{idx}")
-        session_data["send_message"] = st.checkbox(f"Kirim Pesan ({idx + 1})", value=session_data["send_message"], key=f"message-{idx}")
-        session_data["send_follow"] = st.checkbox(f"Kirim Follow ({idx + 1})", value=session_data["send_follow"], key=f"follow-{idx}")
-        session_data["send_buy"] = st.checkbox(f"Kirim Buy ({idx + 1})", value=session_data["send_buy"], key=f"buy-{idx}")
+        session_data["send_like"] = st.checkbox(f"Kirim Like ({idx + 1})", value=session_data["send_like"], key=f"send-like-{idx}")
+        session_data["send_message"] = st.checkbox(f"Kirim Pesan ({idx + 1})", value=session_data["send_message"], key=f"send-message-{idx}")
+        session_data["send_follow"] = st.checkbox(f"Kirim Follow ({idx + 1})", value=session_data["send_follow"], key=f"send-follow-{idx}")
 
         # Tombol Start/Stop dan Hapus
         col1, col2, col3 = st.columns(3)
